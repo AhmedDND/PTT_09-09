@@ -13,7 +13,7 @@ public class CardGrid : LayoutGroup
 
     protected override void Start()
     {
-        _gameSettings = GameSettings.Instance.GetComponent<GameSettings>();
+        _gameSettings = GameSettings.Instance;
     }
 
     public override void CalculateLayoutInputVertical()

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameDataSO _gameData;
     [SerializeField] private CardsCollectionSO _cardCollection;
     [SerializeField] private GameObject _cardPrefab;
+    [SerializeField] private GameObject _gameGrid;
 
     private List<CardController> _cards = new List<CardController>();
     private CardController _firstSelectedCard;
@@ -29,12 +30,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        InitializeGame();
-    }
-
-
     public void InitializeGame()
     {
         CreateCardGrid();
@@ -50,10 +45,10 @@ public class GameManager : MonoBehaviour
 
     private void CreateCardGrid()
     {
-        int totalCards = _gameData.Rows * _gameData.Columns;
+        int totalCards = GameSettings.Instance.Rows * GameSettings.Instance.Columns;
 
         // Destroy old cards if Restart button is clicked
-        foreach (Transform child in transform)
+        foreach (Transform child in _gameGrid.transform)
         {
             Destroy(child.gameObject);
         }
@@ -62,7 +57,7 @@ public class GameManager : MonoBehaviour
         // Create Card Grid
         for (int i = 0; i < totalCards; i++)
         {
-            GameObject cardObject = Instantiate(_cardPrefab, transform);
+            GameObject cardObject = Instantiate(_cardPrefab, _gameGrid.transform);
             cardObject.transform.name = "Card (" + i.ToString() + ")";
             CardController cardController = cardObject.GetComponent<CardController>();
             _cards.Add(cardController);

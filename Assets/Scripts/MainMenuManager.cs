@@ -23,6 +23,11 @@ public class MainMenuManager : MonoBehaviour
         GameSettings.Instance.SetDifficulty(chosen);
     }
 
+    public void OnPlayButtonChosen()
+    {
+        GameManager.Instance.InitializeGame();
+    }
+
     public void OnQuitClicked()
     {
         Application.Quit();
