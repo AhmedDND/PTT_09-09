@@ -48,8 +48,6 @@ public class CardController : MonoBehaviour
         _isFlipped = false;
         _isMatched = false;
 
-        _cardButton.interactable = false;
-
         StartCoroutine(RotateCard(transform, false));
     }
 

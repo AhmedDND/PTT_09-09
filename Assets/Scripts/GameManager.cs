@@ -104,6 +104,8 @@ public class GameManager : MonoBehaviour
 
     public void CardFlipped(CardController card)
     {
+        if (IsProcessing) return;
+
         if (_firstSelectedCard == null)
         {
             _firstSelectedCard = card;
