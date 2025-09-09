@@ -4,7 +4,6 @@ using UnityEngine;
 public class GameDataSO : ScriptableObject
 {
     [Header("Round Settings")]
-    public Difficulty Difficulty;
     public int Rows;
     public int Columns;
 
