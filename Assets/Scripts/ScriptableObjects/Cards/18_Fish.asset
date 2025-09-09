@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 18_Fish
   m_EditorClassIdentifier: 
   CardName: Fish
-  CardFrontFace: {fileID: 21300000, guid: 725dea07ef1724145806dfddfe9dee03, type: 3}
+  CardFrontFace: {fileID: 21300000, guid: 89d42fe86b7c4b74694515b479b1ed59, type: 3}

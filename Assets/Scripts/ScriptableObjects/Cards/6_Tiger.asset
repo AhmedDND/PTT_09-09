@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 6_Tiger
   m_EditorClassIdentifier: 
   CardName: Tiger
-  CardFrontFace: {fileID: 21300000, guid: 725dea07ef1724145806dfddfe9dee03, type: 3}
+  CardFrontFace: {fileID: 21300000, guid: 97a2703e8452b1c4da5d7f10a2fe4d78, type: 3}

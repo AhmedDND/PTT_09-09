@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
-  m_Name: 1_Cat
+  m_Name: 22_Zebra
   m_EditorClassIdentifier: 
-  CardName: Cat
-  CardFrontFace: {fileID: 21300000, guid: 94eed576cc915024ca91610cfb5d58e9, type: 3}
+  CardName: Hedgehog
+  CardFrontFace: {fileID: 21300000, guid: 27acb2f307a950f459349b67dde10138, type: 3}

@@ -10,6 +10,7 @@ public class CardController : MonoBehaviour
 
     private CardSO _cardData;
     private bool _isFlipped = false;
+    private bool _isFlipping = false;
     private bool _isMatched = false;
 
     public CardSO CardData => _cardData;
@@ -23,19 +24,27 @@ public class CardController : MonoBehaviour
         // WIP: Fix so that it grabs the sprite from game difficulty
         _cardBackFace.sprite = cardBack;
 
+        _cardFrontFace.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+        _cardBackFace.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     public void FlipCard()
     {
         if (_isMatched || GameManager.Instance.IsProcessing) return;
-        if (_isFlipped) return;
+        if (!_isFlipping)
+        {
+            _isFlipped = !_isFlipped;
+            // Lock card interaction during flip
+            _cardButton.interactable = false;
 
-        _isFlipped = true;
-        // Lock card interaction during flip
-        _cardButton.interactable = false;
+            StartCoroutine(RotateCard(_isFlipped));
+            GameManager.Instance.CardFlipped(this);
 
-        StartCoroutine(RotateCard(transform, true));
-        GameManager.Instance.CardFlipped(this);
+            // Ensure smooth gameplay with animations for card flipping and matching. The system
+            // should allow continuous card flipping without requiring users to wait for card
+            // comparisons to finish before selecting additional cards.
+
+        }
     }
     public void MarkAsMatched()
     {
@@ -48,29 +57,38 @@ public class CardController : MonoBehaviour
         _isFlipped = false;
         _isMatched = false;
 
-        StartCoroutine(RotateCard(transform, false));
+        StartCoroutine(RotateCard(_isFlipped, true));
     }
 
-    public IEnumerator RotateCard(Transform target, bool flipped, float duration = 0.25f)
+    public IEnumerator RotateCard(bool flipped, bool isReset = false, float duration = 0.25f)
     {
+        _isFlipping = true;
         float time = 0f;
 
-        Quaternion startRot = target.rotation;
-        Quaternion endRot = Quaternion.Euler(0f, flipped ? 0f : 180f, 0f);
+        Quaternion frontStart = _cardFrontFace.transform.localRotation;
+        Quaternion backStart = _cardBackFace.transform.localRotation;
+
+        // Rotate front and back relative to current rotation
+        Quaternion frontEnd = frontStart * Quaternion.Euler(0f, 180f, 0f);
+        Quaternion backEnd = backStart * Quaternion.Euler(0f, 180f, 0f);
 
         while (time < duration)
         {
             time += Time.deltaTime;
             float t = time / duration;
 
-            target.rotation = Quaternion.Slerp(startRot, endRot, t);
+            _cardFrontFace.transform.localRotation = Quaternion.Slerp(frontStart, frontEnd, t);
+            _cardBackFace.transform.localRotation = Quaternion.Slerp(backStart, backEnd, t);
+
             yield return null;
         }
 
-        target.rotation = endRot;
+        _cardFrontFace.transform.localRotation = frontEnd;
+        _cardBackFace.transform.localRotation = backEnd;
 
-        // Enable button only when the rotation is finished
-        if (!_isMatched)
+        _isFlipping = false;
+
+        if (isReset && !_isMatched)
         {
             _cardButton.interactable = true;
         }

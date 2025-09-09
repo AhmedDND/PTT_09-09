@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 4_Sheep
   m_EditorClassIdentifier: 
   CardName: Sheep
-  CardFrontFace: {fileID: 21300000, guid: 725dea07ef1724145806dfddfe9dee03, type: 3}
+  CardFrontFace: {fileID: 21300000, guid: 79f877d2619326141b8190959c157aac, type: 3}

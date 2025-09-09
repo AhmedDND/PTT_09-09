@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 24_Deer
   m_EditorClassIdentifier: 
   CardName: Deer
-  CardFrontFace: {fileID: 21300000, guid: 725dea07ef1724145806dfddfe9dee03, type: 3}
+  CardFrontFace: {fileID: 21300000, guid: fef51da532139cb4cbb97451790645b7, type: 3}

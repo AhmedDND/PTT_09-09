@@ -7,6 +7,11 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject _categoryMenuPanel;
     [SerializeField] private GameObject _gameplayPanel;
 
+    [SerializeField] private CardsCollectionSO _animalsCollection;
+    [SerializeField] private CardsCollectionSO _vegetablesCollection;
+    [SerializeField] private CardsCollectionSO _fruitsCollection;
+    [SerializeField] private CardsCollectionSO _vehiclesCollection;
+
     public void OnGridSizeChosen(int rows, int cols)
     {
         // Update grid size in GameManager
@@ -21,6 +26,26 @@ public class MainMenuManager : MonoBehaviour
     {
         Difficulty chosen = (Difficulty)difficultyIndex;
         GameSettings.Instance.SetDifficulty(chosen);
+    }
+
+    public void OnAnimalsSelected()
+    {
+        GameSettings.Instance.SetCategory(_animalsCollection);
+    }
+
+    public void OnVegetablesSelected()
+    {
+        GameSettings.Instance.SetCategory(_vegetablesCollection);
+    }
+
+    public void OnFruitsSelected()
+    {
+        GameSettings.Instance.SetCategory(_fruitsCollection);
+    }
+
+    public void OnVehiclesSelected()
+    {
+        GameSettings.Instance.SetCategory(_vehiclesCollection);
     }
 
     public void OnPlayButtonChosen()

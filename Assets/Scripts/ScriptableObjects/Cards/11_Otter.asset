@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
-  m_Name: 21_Snake
+  m_Name: 11_Otter
   m_EditorClassIdentifier: 
-  CardName: Snake
-  CardFrontFace: {fileID: 21300000, guid: 725dea07ef1724145806dfddfe9dee03, type: 3}
+  CardName: Otter
+  CardFrontFace: {fileID: 21300000, guid: 85461d013de2a76438556858966728b0, type: 3}

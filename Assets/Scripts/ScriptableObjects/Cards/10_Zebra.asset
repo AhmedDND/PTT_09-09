@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 10_Zebra
   m_EditorClassIdentifier: 
   CardName: Zebra
-  CardFrontFace: {fileID: 21300000, guid: 725dea07ef1724145806dfddfe9dee03, type: 3}
+  CardFrontFace: {fileID: 21300000, guid: 716cb6f511b59584f860e62e9164e6d0, type: 3}

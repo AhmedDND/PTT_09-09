@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 23_Bear
   m_EditorClassIdentifier: 
   CardName: Bear
-  CardFrontFace: {fileID: 21300000, guid: 725dea07ef1724145806dfddfe9dee03, type: 3}
+  CardFrontFace: {fileID: 21300000, guid: dfdbfea14394f6f40b1bef44e0f98a0a, type: 3}

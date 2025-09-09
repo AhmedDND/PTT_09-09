@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 16_Duck
   m_EditorClassIdentifier: 
   CardName: Duck
-  CardFrontFace: {fileID: 21300000, guid: 725dea07ef1724145806dfddfe9dee03, type: 3}
+  CardFrontFace: {fileID: 21300000, guid: 0fa970d5c9a182f4aac36fe0084b0d0e, type: 3}

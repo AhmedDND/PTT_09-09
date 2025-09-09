@@ -6,8 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] private GameDataSO _gameData;
-    [SerializeField] private CardsCollectionSO _cardCollection;
     [SerializeField] private GameObject _cardPrefab;
     [SerializeField] private GameObject _gameGrid;
 
@@ -63,7 +61,14 @@ public class GameManager : MonoBehaviour
             _cards.Add(cardController);
         }
 
-        List<CardSO> availableCards = new List<CardSO>(_cardCollection.cards);
+        CardsCollectionSO cardCollection = GameSettings.Instance.SelectedCategory;
+        if (cardCollection == null)
+        {
+            Debug.LogError("No category selected!");
+            return;
+        }
+
+        List<CardSO> availableCards = new List<CardSO>(GameSettings.Instance.GetCategory().cards);
         int neededPairs = totalCards / 2;
         // Error checking in case of an invalid input
         if (availableCards.Count < neededPairs)
@@ -96,9 +101,10 @@ public class GameManager : MonoBehaviour
         }
 
         // Assign cards to slots
+        Sprite cardBackground = GameSettings.Instance.GetCardBackground();
         for (int i = 0; i < _cards.Count; i++)
         {
-            _cards[i].Initialize(allCards[i], _gameData.CardBackground);
+            _cards[i].Initialize(allCards[i], cardBackground);
         }
     }
 
@@ -131,7 +137,7 @@ public class GameManager : MonoBehaviour
             _matchedPairs++;
 
             // Check for game completion
-            if (_matchedPairs >= (_gameData.Rows * _gameData.Columns) / 2)
+            if (_matchedPairs >= (GameSettings.Instance.Rows * GameSettings.Instance.Columns) / 2)
             {
                 Debug.Log("Game Completed!");
             }
