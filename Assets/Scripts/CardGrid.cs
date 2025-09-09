@@ -3,59 +3,55 @@ using UnityEngine.UI;
 
 public class CardGrid : LayoutGroup
 {
-    [SerializeField] private int _rows = 2;
-    [SerializeField] private int _columns = 2;
-
     [SerializeField] private Vector2 _spacing;
     [SerializeField] private int _topPadding;
 
     private Vector2 _cardSize;
     public Vector2 CardSize => _cardSize;
 
-    // Added validation to prevent invalid values and division by zero
-    protected override void OnValidate()
+    private GameSettings _gameSettings;
+
+    protected override void Start()
     {
-        base.OnValidate();
-        _rows = Mathf.Max(2, _rows);
-        _columns = Mathf.Max(2, _columns);
+        _gameSettings = GameSettings.Instance.GetComponent<GameSettings>();
     }
 
     public override void CalculateLayoutInputVertical()
     {
         // Handle division by 0 case
-        if (_rows == 0 || _columns == 0)
+        if (_gameSettings.Rows == 0 || _gameSettings.Columns == 0)
         {
             // Set to default difficulty
             Debug.LogWarning("Rows and columns must be positive values. Using defaults.");
-            _rows = 2;
-            _columns = 2;
+            _gameSettings.Rows = 2;
+            _gameSettings.Columns = 2;
         }
 
         // Calculate the card size relative to the rectTransform
         float parentWidth = rectTransform.rect.width;
         float parentHeight = rectTransform.rect.height;
 
-        float cardHeight = (parentHeight - 2 * _topPadding - _spacing.y * (_rows - 1)) / _rows;
+        float cardHeight = (parentHeight - 2 * _topPadding - _spacing.y * (_gameSettings.Rows - 1)) / _gameSettings.Rows;
         float cardWidth = cardHeight;
 
         // Handle different screen Aspect Ratios
-        if (cardWidth * _columns + _spacing.x * (_columns - 1) > parentWidth)
+        if (cardWidth * _gameSettings.Columns + _spacing.x * (_gameSettings.Columns - 1) > parentWidth)
         {
-            cardWidth = (parentWidth - 2 * _topPadding - (_columns - 1) * _spacing.x) / _columns;
+            cardWidth = (parentWidth - 2 * _topPadding - (_gameSettings.Columns - 1) * _spacing.x) / _gameSettings.Columns;
             cardHeight = cardWidth;
         }
 
         _cardSize = new Vector2(cardWidth, cardHeight);
 
-        padding.left = Mathf.FloorToInt((parentWidth - _columns * cardWidth - _spacing.x * (_columns - 1)) / 2);
-        padding.top = Mathf.FloorToInt((parentHeight - _rows * cardHeight - _spacing.y * (_rows - 1)) / 2);
+        padding.left = Mathf.FloorToInt((parentWidth - _gameSettings.Columns * cardWidth - _spacing.x * (_gameSettings.Columns - 1)) / 2);
+        padding.top = Mathf.FloorToInt((parentHeight - _gameSettings.Rows * cardHeight - _spacing.y * (_gameSettings.Rows - 1)) / 2);
         padding.bottom = padding.top;
 
         // Place card in the correct position
         for (int i = 0; i < rectChildren.Count; i++)
         {
-            int rowCount = i / _columns;
-            int columnCount = i % _columns;
+            int rowCount = i / _gameSettings.Columns;
+            int columnCount = i % _gameSettings.Columns;
             
             RectTransform item = rectChildren[i];
 

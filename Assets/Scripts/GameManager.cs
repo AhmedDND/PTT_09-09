@@ -29,14 +29,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void OnEnable()
     {
         InitializeGame();
     }
 
+
     public void InitializeGame()
     {
         CreateCardGrid();
+    }
+
+    public void SetGridSize(int rows, int columns)
+    {
+        GameSettings.Instance.Rows = rows;
+        GameSettings.Instance.Columns = columns;
+
+        Debug.Log($"Grid size set to {rows}x{columns}");
     }
 
     private void CreateCardGrid()

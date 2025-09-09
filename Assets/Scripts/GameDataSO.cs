@@ -13,4 +13,6 @@ public class GameDataSO : ScriptableObject
     [Header("Grid Layout Variables")]
     public int TopBottomPadding;
     public Vector2 Spacing;
+
+    //REPLACE WITH SCRIPT CALLED GAME SETTINGS AND ADJUST BASED ON BUTTONS PICKED IN MAIN MENU
 }
