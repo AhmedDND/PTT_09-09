@@ -62,6 +62,44 @@ public class GameManager : MonoBehaviour
             CardController cardController = cardObject.GetComponent<CardController>();
             _cards.Add(cardController);
         }
+
+        List<CardSO> availableCards = new List<CardSO>(_cardCollection.cards);
+        int neededPairs = totalCards / 2;
+        // Error checking in case of an invalid input
+        if (availableCards.Count < neededPairs)
+        {
+            Debug.LogError("Not enough unique cards in collection!");
+            return;
+        }
+
+        List<CardSO> chosenCards = new List<CardSO>();
+        for (int i = 0; i < neededPairs; i++)
+        {
+            int randomIndex = Random.Range(0, availableCards.Count);
+            chosenCards.Add(availableCards[randomIndex]);
+            availableCards.RemoveAt(randomIndex);
+        }
+
+        List<CardSO> allCards = new List<CardSO>();
+        foreach (CardSO card in chosenCards)
+        {
+            allCards.Add(card);
+            allCards.Add(card);
+        }
+
+        for (int i = 0; i < allCards.Count; i++)
+        {
+            CardSO temp = allCards[i];
+            int randomIndex = Random.Range(i, allCards.Count);
+            allCards[i] = allCards[randomIndex];
+            allCards[randomIndex] = temp;
+        }
+
+        // Assign cards to slots
+        for (int i = 0; i < _cards.Count; i++)
+        {
+            _cards[i].Initialize(allCards[i], _gameData.CardBackground);
+        }
     }
 
     public void CardFlipped(CardController card)
@@ -80,7 +118,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator CheckForMatch()
     {
         IsProcessing = true;
-        yield return new WaitForSeconds(1f); // Give player time to see the second card
+        // Give player time to see the second card
+        yield return new WaitForSeconds(1f);
 
         if (_firstSelectedCard.CardData.name == _secondSelectedCard.CardData.name)
         {

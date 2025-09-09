@@ -6780,6 +6780,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1865310258}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: OnPlayButtonChosen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1541579176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8034,6 +8046,7 @@ MonoBehaviour:
   _gameData: {fileID: 11400000, guid: 1002401d63d73ba459566db577b0ce62, type: 2}
   _cardCollection: {fileID: 11400000, guid: 6ed10019e4a669748a387e0d3f69c7bf, type: 2}
   _cardPrefab: {fileID: 1617036474660996679, guid: 5132458bed5e9c747b68b3896c77b556, type: 3}
+  _gameGrid: {fileID: 158730305}
 --- !u!1 &1947933268
 GameObject:
   m_ObjectHideFlags: 0
