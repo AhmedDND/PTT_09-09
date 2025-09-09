@@ -43,13 +43,71 @@ public class GameManager : MonoBehaviour
     {
         int totalCards = _gameData.Rows * _gameData.Columns;
 
-        // Create card grid
+        // Destroy old cards if Restart button is clicked
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+        _cards.Clear();
+
+        // Create Card Grid
         for (int i = 0; i < totalCards; i++)
         {
             GameObject cardObject = Instantiate(_cardPrefab, transform);
-            cardObject.transform.name = "Card (" + i.ToString() + "à)";
+            cardObject.transform.name = "Card (" + i.ToString() + ")";
             CardController cardController = cardObject.GetComponent<CardController>();
             _cards.Add(cardController);
         }
+    }
+
+    public void CardFlipped(CardController card)
+    {
+        if (_firstSelectedCard == null)
+        {
+            _firstSelectedCard = card;
+        }
+        else
+        {
+            _secondSelectedCard = card;
+            StartCoroutine(CheckForMatch());
+        }
+    }
+
+    private IEnumerator CheckForMatch()
+    {
+        IsProcessing = true;
+        yield return new WaitForSeconds(1f); // Give player time to see the second card
+
+        if (_firstSelectedCard.CardData.name == _secondSelectedCard.CardData.name)
+        {
+            // Match found
+            _firstSelectedCard.MarkAsMatched();
+            _secondSelectedCard.MarkAsMatched();
+            _matchedPairs++;
+
+            // Check for game completion
+            if (_matchedPairs >= (_gameData.Rows * _gameData.Columns) / 2)
+            {
+                Debug.Log("Game Completed!");
+            }
+        }
+        else
+        {
+            // No match, Flip cards back
+            _firstSelectedCard.ResetCard();
+            _secondSelectedCard.ResetCard();
+        }
+
+        _firstSelectedCard = null;
+        _secondSelectedCard = null;
+        IsProcessing = false;
+    }
+
+    public void RestartGame()
+    {
+        _matchedPairs = 0;
+        _firstSelectedCard = null;
+        _secondSelectedCard = null;
+        InitializeGame();
     }
 }

@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf5992b348a3344fb7c0bfb77e97f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardFrontFace: {fileID: 4497661009320773081}
-  _cardBackFace: {fileID: 1970536289977665524}
+  _cardFrontFace: {fileID: 6505834170180119706}
+  _cardBackFace: {fileID: 6684210250645201417}
   _cardButton: {fileID: 3283917324391300849}
 --- !u!1 &1863922104692213127
 GameObject:
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5767907141723496535}
   - component: {fileID: 2391391785241364023}
-  - component: {fileID: 1970536289977665524}
+  - component: {fileID: 6684210250645201417}
   m_Layer: 5
   m_Name: BackFace
   m_TagString: Untagged
@@ -141,7 +141,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863922104692213127}
   m_CullTransparentMesh: 1
---- !u!114 &1970536289977665524
+--- !u!114 &6684210250645201417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a9c8651c435e34e438241bf16bc559ac, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662758299665409267}
   - component: {fileID: 2466706538828183122}
-  - component: {fileID: 4497661009320773081}
+  - component: {fileID: 6505834170180119706}
   m_Layer: 5
   m_Name: FrontFace
   m_TagString: Untagged
@@ -217,7 +217,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4525126592672154726}
   m_CullTransparentMesh: 1
---- !u!114 &4497661009320773081
+--- !u!114 &6505834170180119706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,9 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a9c8651c435e34e438241bf16bc559ac, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -367,4 +367,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 789340269323146970}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5401594981718395860}
+        m_TargetAssemblyTypeName: CardController, Assembly-CSharp
+        m_MethodName: FlipCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

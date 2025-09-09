@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c49ad9f39d3c1342973414b1e441fb0, type: 3}
   m_Name: Animals
   m_EditorClassIdentifier: 
-  cards: []
+  cards:
+  - {fileID: 11400000, guid: 9d1255b509e581e4f92287cdf8be8368, type: 2}
+  - {fileID: 11400000, guid: 2b0679f5094633a46a259f4b5a38fcc4, type: 2}
+  - {fileID: 11400000, guid: 3b118a50d0df4294b9c4c7798e34f423, type: 2}
+  - {fileID: 11400000, guid: c07499f00d50c734d9e662b85789d486, type: 2}
