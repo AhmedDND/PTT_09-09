@@ -110,33 +110,32 @@ public class GameManager : MonoBehaviour
 
     public void CardFlipped(CardController card)
     {
-        if (IsProcessing) return;
+        if (card.IsMatched) return;
 
         if (_firstSelectedCard == null)
         {
             _firstSelectedCard = card;
         }
-        else
+        else if (_secondSelectedCard == null && card != _firstSelectedCard)
         {
             _secondSelectedCard = card;
-            StartCoroutine(CheckForMatch());
+            StartCoroutine(CheckForMatch(_firstSelectedCard, _secondSelectedCard));
+
+            _firstSelectedCard = null;
+            _secondSelectedCard = null;
         }
     }
 
-    private IEnumerator CheckForMatch()
+    private IEnumerator CheckForMatch(CardController first, CardController second)
     {
-        IsProcessing = true;
-        // Give player time to see the second card
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
 
-        if (_firstSelectedCard.CardData.name == _secondSelectedCard.CardData.name)
+        if (first.CardData.name == second.CardData.name)
         {
-            // Match found
-            _firstSelectedCard.MarkAsMatched();
-            _secondSelectedCard.MarkAsMatched();
+            first.MarkAsMatched();
+            second.MarkAsMatched();
             _matchedPairs++;
 
-            // Check for game completion
             if (_matchedPairs >= (GameSettings.Instance.Rows * GameSettings.Instance.Columns) / 2)
             {
                 Debug.Log("Game Completed!");
@@ -144,14 +143,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // No match, Flip cards back
-            _firstSelectedCard.ResetCard();
-            _secondSelectedCard.ResetCard();
+            first.ResetCard();
+            second.ResetCard();
         }
-
-        _firstSelectedCard = null;
-        _secondSelectedCard = null;
-        IsProcessing = false;
     }
 
     public void RestartGame()

@@ -40,10 +40,6 @@ public class CardController : MonoBehaviour
             StartCoroutine(RotateCard(_isFlipped));
             GameManager.Instance.CardFlipped(this);
 
-            // Ensure smooth gameplay with animations for card flipping and matching. The system
-            // should allow continuous card flipping without requiring users to wait for card
-            // comparisons to finish before selecting additional cards.
-
         }
     }
     public void MarkAsMatched()
@@ -68,7 +64,6 @@ public class CardController : MonoBehaviour
         Quaternion frontStart = _cardFrontFace.transform.localRotation;
         Quaternion backStart = _cardBackFace.transform.localRotation;
 
-        // Rotate front and back relative to current rotation
         Quaternion frontEnd = frontStart * Quaternion.Euler(0f, 180f, 0f);
         Quaternion backEnd = backStart * Quaternion.Euler(0f, 180f, 0f);
 
@@ -88,9 +83,8 @@ public class CardController : MonoBehaviour
 
         _isFlipping = false;
 
-        if (isReset && !_isMatched)
-        {
+        // Reactivate button only if card is not matched
+        if (!_isMatched)
             _cardButton.interactable = true;
-        }
     }
 }
