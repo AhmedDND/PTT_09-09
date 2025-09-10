@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     private CardController _firstSelectedCard;
     private CardController _secondSelectedCard;
     private int _matchedPairs = 0;
+
+    public event Action OnGameCompleted;
 
     public bool IsProcessing { get; private set; }
 
@@ -83,7 +86,7 @@ public class GameManager : MonoBehaviour
         List<CardSO> chosenCards = new List<CardSO>();
         for (int i = 0; i < neededPairs; i++)
         {
-            int randomIndex = Random.Range(0, availableCards.Count);
+            int randomIndex = UnityEngine.Random.Range(0, availableCards.Count);
             chosenCards.Add(availableCards[randomIndex]);
             availableCards.RemoveAt(randomIndex);
         }
@@ -98,7 +101,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < allCards.Count; i++)
         {
             CardSO temp = allCards[i];
-            int randomIndex = Random.Range(i, allCards.Count);
+            int randomIndex = UnityEngine.Random.Range(i, allCards.Count);
             allCards[i] = allCards[randomIndex];
             allCards[randomIndex] = temp;
         }
@@ -148,6 +151,8 @@ public class GameManager : MonoBehaviour
                     _timeController.PauseTimer();
                     _timeController.SetEndGameText();
                 }
+
+                OnGameCompleted?.Invoke();
             }
         }
         else

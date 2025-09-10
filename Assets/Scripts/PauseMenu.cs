@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -7,8 +8,22 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _playMenu;
     [SerializeField] private GameObject _mainMenu;
+    [SerializeField] private GameObject _gameOverMenu;
+    [SerializeField] private TMP_Text _youWonText;
 
     [SerializeField] private TimeController _timeController;
+
+    private void OnEnable()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnGameCompleted += ShowGameOverMenu;
+    }
+
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnGameCompleted -= ShowGameOverMenu;
+    }
 
     public void OnPauseButtonPressed()
     {
@@ -27,6 +42,7 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance.RestartGame();
         _timeController.ResetTimer();
         _pauseMenu.SetActive(false);
+        _gameOverMenu.SetActive(false);
     }
 
     public void OnMenuButtonClicked()
@@ -34,6 +50,13 @@ public class PauseMenu : MonoBehaviour
         _mainMenu.SetActive(true);
         _playMenu.SetActive(false);
         _pauseMenu.SetActive(false);
+        _gameOverMenu.SetActive(false);
+    }
+
+    private void ShowGameOverMenu()
+    {
+        _gameOverMenu.SetActive(true);
+        _youWonText.text = _timeController.SetEndGameText();
     }
 
     public void OnQuitButtonClicked()

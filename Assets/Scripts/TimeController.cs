@@ -4,7 +4,6 @@ using UnityEngine;
 public class TimeController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _timeText;
-    [SerializeField] private TMP_Text _gameOverText;
 
     private float _roundTime;
     private bool _roundInProgress;
@@ -38,9 +37,9 @@ public class TimeController : MonoBehaviour
         return num < 10 ? "0" + num.ToString() : num.ToString();
     }
 
-    public void SetEndGameText()
+    public string SetEndGameText()
     {
-        _gameOverText.text = $"You finished in {GetTimeString()}!";
+        return $"You won! You finished this round in {GetTimeString()}!";
     }
 
     public void StartTimer()
