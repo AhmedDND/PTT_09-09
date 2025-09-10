@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public void InitializeGame()
     {
         CreateCardGrid();
+        _matchedPairs = 0;
         if (_timeController != null)
             _timeController.StartTimer();
     }
@@ -145,7 +146,7 @@ public class GameManager : MonoBehaviour
             if (_matchedPairs >= (GameSettings.Instance.Rows * GameSettings.Instance.Columns) / 2)
             {
                 Debug.Log("Game Completed!");
-
+               
                 if (_timeController != null)
                 {
                     _timeController.PauseTimer();
