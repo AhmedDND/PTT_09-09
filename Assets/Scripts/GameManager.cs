@@ -166,6 +166,8 @@ public class GameManager : MonoBehaviour
     {
         if (card.IsMatched) return;
 
+        AudioManager.Instance.Play("Flip");
+
         if (_firstSelectedCard == null)
         {
             _firstSelectedCard = card;
@@ -192,12 +194,16 @@ public class GameManager : MonoBehaviour
             second.MarkAsMatched();
             _matchedPairs++;
 
+            AudioManager.Instance.Play("Match");
+
             ScoreManager.Instance.RegisterMatch(_timeController.RoundTime);
 
             if (_matchedPairs >= (GameSettings.Instance.Rows * GameSettings.Instance.Columns) / 2)
             {
                 Debug.Log("Game Completed!");
-               
+
+                AudioManager.Instance.Play("GameOver");
+
                 if (_timeController != null)
                 {
                     _timeController.PauseTimer();
@@ -218,6 +224,8 @@ public class GameManager : MonoBehaviour
         {
             first.ResetCard();
             second.ResetCard();
+
+            AudioManager.Instance.Play("Mismatch");
 
             ScoreManager.Instance.ResetCombo();
         }
