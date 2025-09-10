@@ -77,26 +77,19 @@ public class SaveLoadSystem : MonoBehaviour
                 savedCards.Add(cardSO);
         }
 
-        GameManager.Instance.InitializeGame();
-
-        // Match cards to saved state
-        var cards = GameManager.Instance.Cards;
-        for (int i = 0; i < saveData.Cards.Count; i++)
-        {
-            var savedCard = saveData.Cards[i];
-            var cardController = cards.Find(c => c.CardData.name == savedCard.CardName && !c.IsMatched && !c.IsFlipped);
-
-            if (cardController != null)
-            {
-                if (savedCard.IsFlipped)
-                    cardController.ForceFlipWithoutAnimation();
-
-                if (savedCard.IsMatched)
-                    cardController.MarkAsMatched();
-            }
-        }
+        GameManager.Instance.CreateGridFromSave(savedCards, saveData.Cards);
 
         _timeController.SetRoundTime(saveData.RoundTime);
         ScoreManager.Instance.SetScoreFromSaveFile(saveData.TotalScore, saveData.TurnsTaken, saveData.CurrentCombo);
+    }
+
+    public bool HasSavedRound()
+    {
+        return SaveLoadManager.LoadGame() != null;
+    }
+
+    public void ClearSavedRound()
+    {
+        SaveLoadManager.DeleteSaveFile(); // implement file deletion
     }
 }

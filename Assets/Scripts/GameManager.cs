@@ -117,6 +117,49 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CreateGridFromSave(List<CardSO> savedCards, List<CardDataSave> savedCardStates)
+    {
+        int totalCards = GameSettings.Instance.Rows * GameSettings.Instance.Columns;
+
+        // Destroy old cards
+        foreach (Transform child in _gameGrid.transform)
+            Destroy(child.gameObject);
+
+        _cards.Clear();
+        _matchedPairs = 0;
+        _firstSelectedCard = null;
+        _secondSelectedCard = null;
+
+        // Create card GameObjects
+        for (int i = 0; i < totalCards; i++)
+        {
+            GameObject cardObject = Instantiate(_cardPrefab, _gameGrid.transform);
+            cardObject.transform.name = "Card (" + i + ")";
+            _cards.Add(cardObject.GetComponent<CardController>());
+        }
+
+        // Use saved cards order
+        Sprite cardBackground = GameSettings.Instance.GetCardBackground();
+        for (int i = 0; i < _cards.Count; i++)
+        {
+            _cards[i].Initialize(savedCards[i], cardBackground);
+
+            // Restore flipped/matched states
+            if (savedCardStates[i].IsFlipped)
+                _cards[i].ForceFlipWithoutAnimation();
+
+            if (savedCardStates[i].IsMatched)
+            {
+                _cards[i].MarkAsMatched();
+                _matchedPairs++;
+            }
+        }
+
+        // Start timer
+        if (_timeController != null)
+            _timeController.StartTimer();
+    }
+
     public void CardFlipped(CardController card)
     {
         if (card.IsMatched) return;
@@ -176,6 +219,12 @@ public class GameManager : MonoBehaviour
 
             ScoreManager.Instance.ResetCombo();
         }
+    }
+
+    public bool IsGameCompleted()
+    {
+        int totalPairs = (GameSettings.Instance.Rows * GameSettings.Instance.Columns) / 2;
+        return _matchedPairs >= totalPairs;
     }
 
     public void RestartGame()

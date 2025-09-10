@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -9,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _playMenu;
     [SerializeField] private GameObject _mainMenu;
     [SerializeField] private GameObject _gameOverMenu;
+    [SerializeField] private GameObject _continueButton;
     [SerializeField] private TMP_Text _youWonText;
 
     [SerializeField] private TimeController _timeController;
@@ -47,8 +49,21 @@ public class PauseMenu : MonoBehaviour
 
     public void OnMenuButtonClicked()
     {
-        //Test
-        SaveLoadSystem.Instance.SaveCurrentRound();
+        if(!GameManager.Instance.IsGameCompleted())
+        {
+            SaveLoadSystem.Instance.SaveCurrentRound();
+
+            if (SaveLoadSystem.Instance.HasSavedRound())
+            {
+                _continueButton.SetActive(true);
+            }
+        }
+        else
+        {
+            // Game is finished, disable Continue button
+            SaveLoadSystem.Instance.ClearSavedRound();
+            _continueButton.SetActive(false);
+        }
 
         _mainMenu.SetActive(true);
         _playMenu.SetActive(false);
@@ -65,6 +80,22 @@ public class PauseMenu : MonoBehaviour
 
     public void OnQuitButtonClicked()
     {
+        if (!GameManager.Instance.IsGameCompleted())
+        {
+            SaveLoadSystem.Instance.SaveCurrentRound();
+
+            if (SaveLoadSystem.Instance.HasSavedRound())
+            {
+                _continueButton.SetActive(true);
+            }
+        }
+        else
+        {
+            // Game is finished, disable Continue button
+            _continueButton.SetActive(false);
+            SaveLoadSystem.Instance.ClearSavedRound();
+        }
+
         Application.Quit();
 
         // If in editor, stop play mode
