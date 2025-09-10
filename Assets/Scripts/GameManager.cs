@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -155,6 +156,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        _matchedPairs = savedCardStates.Count(c => c.IsMatched) / 2;
         // Start timer
         if (_timeController != null)
             _timeController.StartTimer();

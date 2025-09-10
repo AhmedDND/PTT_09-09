@@ -73,8 +73,13 @@ public class SaveLoadSystem : MonoBehaviour
         foreach (var savedCard in saveData.Cards)
         {
             CardSO cardSO = GameSettings.Instance.GetCategory().cards.Find(c => c.name == savedCard.CardName);
-            if (cardSO != null)
-                savedCards.Add(cardSO);
+            if (cardSO == null)
+            {
+                Debug.LogError($"Card '{savedCard.CardName}' not found in current category!");
+                // Add a fallback to prevent crashes
+                cardSO = GameSettings.Instance.GetCategory().cards[0];
+            }
+            savedCards.Add(cardSO);
         }
 
         GameManager.Instance.CreateGridFromSave(savedCards, saveData.Cards);

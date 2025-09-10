@@ -7732,6 +7732,7 @@ MonoBehaviour:
   _playMenu: {fileID: 1322787343}
   _mainMenu: {fileID: 665753822}
   _gameOverMenu: {fileID: 1163137446}
+  _continueButton: {fileID: 915722473}
   _youWonText: {fileID: 1384205594}
   _timeController: {fileID: 336562498}
 --- !u!1 &1380096769
@@ -10761,6 +10762,7 @@ MonoBehaviour:
   _chooseGridPanel: {fileID: 1660746000}
   _categoryMenuPanel: {fileID: 1656378597}
   _gameplayPanel: {fileID: 1322787343}
+  _continueButton: {fileID: 915722473}
   _animalsCollection: {fileID: 11400000, guid: 6ed10019e4a669748a387e0d3f69c7bf, type: 2}
   _vegetablesCollection: {fileID: 11400000, guid: 372963e812c113f41a0068369e04983c, type: 2}
   _fruitsCollection: {fileID: 11400000, guid: 9b46453f2cc9f2741b0895ec381af8e3, type: 2}
