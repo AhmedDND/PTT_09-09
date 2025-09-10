@@ -12,4 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c49ad9f39d3c1342973414b1e441fb0, type: 3}
   m_Name: Fruits
   m_EditorClassIdentifier: 
-  cards: []
+  cards:
+  - {fileID: 11400000, guid: 179f37dcd6f284e4fa3ef6701807fae0, type: 2}
+  - {fileID: 11400000, guid: 893999a799a208c448e23129f73c72e8, type: 2}
+  - {fileID: 11400000, guid: 0f5f808016bf60149abbcc879e849975, type: 2}
+  - {fileID: 11400000, guid: 4a8229cf52b228143939159383bf9feb, type: 2}
+  - {fileID: 11400000, guid: 381caaa84adb1e647a74daf1682bd560, type: 2}
+  - {fileID: 11400000, guid: 498fdffc170975043bb2dc1e41228d0c, type: 2}
+  - {fileID: 11400000, guid: 37b839d55811aff49aa102c9b6bbe563, type: 2}
+  - {fileID: 11400000, guid: 9314c9d246cc2c04b80fe1f9dd937ba3, type: 2}
+  - {fileID: 11400000, guid: 7e57ef60d200b9f458de552148c2c2ad, type: 2}
+  - {fileID: 11400000, guid: c8673fece07031746ab3fb9984faa732, type: 2}
+  - {fileID: 11400000, guid: 6d7df0e749159e04494d14c90e135eb0, type: 2}
+  - {fileID: 11400000, guid: d0e46ed9e12c6e24d83ae2fa41879200, type: 2}
+  - {fileID: 11400000, guid: 2decd525657bf9346af67a25690ba55a, type: 2}
+  - {fileID: 11400000, guid: b15088289b3b087458463798882a24e0, type: 2}
+  - {fileID: 11400000, guid: de216cc563200114ea0a8768f3add5ee, type: 2}
+  - {fileID: 11400000, guid: 2dfb053b619e4eb43bc0f9a2855cff39, type: 2}
+  - {fileID: 11400000, guid: 2bad0a00d569bff43853700cac774149, type: 2}
+  - {fileID: 11400000, guid: fd5c1ce444ed7e345b01b69dd52d2998, type: 2}
+  - {fileID: 11400000, guid: f67e4af267b94ff4a877b143a8e56dbc, type: 2}
+  - {fileID: 11400000, guid: 1ac83f83d29076244a03b0e73e012e8c, type: 2}
+  - {fileID: 11400000, guid: 928745ad6d3ddc94e8d5c22223502431, type: 2}
+  - {fileID: 11400000, guid: 8ce99264294004e4c9a121c385b6d1a2, type: 2}
+  - {fileID: 11400000, guid: 321a744cdc7bee147a80436c6396e9fc, type: 2}
+  - {fileID: 11400000, guid: 1547f307d4413dc43b3456ad55c91ba2, type: 2}

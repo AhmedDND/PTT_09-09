@@ -12,4 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c49ad9f39d3c1342973414b1e441fb0, type: 3}
   m_Name: Vehicles
   m_EditorClassIdentifier: 
-  cards: []
+  cards:
+  - {fileID: 11400000, guid: 2697f1c53c79cb14dabb2f631059b36b, type: 2}
+  - {fileID: 11400000, guid: 7612c77d21fc98d478069196e97066e3, type: 2}
+  - {fileID: 11400000, guid: 9d5eeeea7b43ccb4c9f39d407d3402a6, type: 2}
+  - {fileID: 11400000, guid: 02effd1ddbe03e444a5aa20992fe63c7, type: 2}
+  - {fileID: 11400000, guid: c1dc2a1e830276b44a50eaa3d8f22b57, type: 2}
+  - {fileID: 11400000, guid: ef91ad6897600834386c4be99f829063, type: 2}
+  - {fileID: 11400000, guid: fa2cb1d8fa4e8c84eb70b4ab6f4f1419, type: 2}
+  - {fileID: 11400000, guid: 026ff361edae9854c9f11027bced5923, type: 2}
+  - {fileID: 11400000, guid: c0bdc22ce83813e46a461954a5537fa2, type: 2}
+  - {fileID: 11400000, guid: 4fde2c4920202b449bf8c4bbe9aa1b0e, type: 2}
+  - {fileID: 11400000, guid: 5b054a01f7d45224292cfb69517c6965, type: 2}
+  - {fileID: 11400000, guid: 5935299709a2e3a4cb4f94b498c5a3d2, type: 2}
+  - {fileID: 11400000, guid: 9c648e5156969bf48bfb70f0686fb38f, type: 2}
+  - {fileID: 11400000, guid: 4541d6933aadb2f4ca6fcb23a4efb4fc, type: 2}
+  - {fileID: 11400000, guid: edd7dd8638bbd7f47881ece0275fa805, type: 2}
+  - {fileID: 11400000, guid: 2240e91861b5c7149b019aad4f14eb6a, type: 2}
+  - {fileID: 11400000, guid: cd669f0d19c7aa94f8f00d4a51998dce, type: 2}
+  - {fileID: 11400000, guid: 55adcbe4a0a29d84cb93fe0583e9122f, type: 2}
+  - {fileID: 11400000, guid: 0be03003027969e41944f61ecd3fc4a9, type: 2}
+  - {fileID: 11400000, guid: de1fc7089e4b3fe4995d01eacd81503a, type: 2}
+  - {fileID: 11400000, guid: d2a177c2eef54a34cba2d71bd7080220, type: 2}
+  - {fileID: 11400000, guid: 4dfa0c4b60bef624eb0780b7c078a510, type: 2}
+  - {fileID: 11400000, guid: a01a00097a0318148a82b681740d2108, type: 2}
+  - {fileID: 11400000, guid: df2aea6c7e695984e9cf78bbe5fccab5, type: 2}
