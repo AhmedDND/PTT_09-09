@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 1_Asparagus
   m_EditorClassIdentifier: 
-  CardName: Cat
-  CardFrontFace: {fileID: 21300000, guid: 94eed576cc915024ca91610cfb5d58e9, type: 3}
+  CardName: Asparagus
+  CardFrontFace: {fileID: 21300000, guid: 493c6aefb317b9040997667329085a07, type: 3}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 17_Radish
   m_EditorClassIdentifier: 
-  CardName: Snake
-  CardFrontFace: {fileID: 21300000, guid: bdf2c8d2d3752d14f9e92ce14ed48bd3, type: 3}
+  CardName: Radish
+  CardFrontFace: {fileID: 21300000, guid: bbf7b778c3866c14fb95a7a63517f5a5, type: 3}

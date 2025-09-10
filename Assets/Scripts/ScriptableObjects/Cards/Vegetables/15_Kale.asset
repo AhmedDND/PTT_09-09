@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 15_Kale
   m_EditorClassIdentifier: 
-  CardName: Goat
-  CardFrontFace: {fileID: 21300000, guid: c4160e9f6a0aedc43bccacce2495b85c, type: 3}
+  CardName: Kale
+  CardFrontFace: {fileID: 21300000, guid: d915169bb9f5af142ba7ec708ceefde4, type: 3}

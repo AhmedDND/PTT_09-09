@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 19_RedPepper
   m_EditorClassIdentifier: 
-  CardName: Llama
-  CardFrontFace: {fileID: 21300000, guid: 1d2e7d18235a41f4d8bca3f5d5e74fb6, type: 3}
+  CardName: RedPepper
+  CardFrontFace: {fileID: 21300000, guid: ee44ef78720f492448b1d9a05cf19a9c, type: 3}

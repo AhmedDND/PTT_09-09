@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 7_Cauliflower
   m_EditorClassIdentifier: 
-  CardName: Jellyfish
-  CardFrontFace: {fileID: 21300000, guid: 277852918473c7e4eaead8cb16707271, type: 3}
+  CardName: Cauliflower
+  CardFrontFace: {fileID: 21300000, guid: fbd3e19f23543d3449f8a124a12e1ea1, type: 3}

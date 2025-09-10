@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 14_GreenPepper
   m_EditorClassIdentifier: 
-  CardName: Hamster
-  CardFrontFace: {fileID: 21300000, guid: 9064eb9b09d544044957144f502caf38, type: 3}
+  CardName: GreenPepper
+  CardFrontFace: {fileID: 21300000, guid: ed250369a4bbf1747bde178af27788a6, type: 3}

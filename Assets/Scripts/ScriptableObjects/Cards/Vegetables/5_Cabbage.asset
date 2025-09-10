@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 5_Cabbage
   m_EditorClassIdentifier: 
-  CardName: Elephant
-  CardFrontFace: {fileID: 21300000, guid: 86bd0cd6f78d04f4498725db34cef14e, type: 3}
+  CardName: Cabbage
+  CardFrontFace: {fileID: 21300000, guid: 8a14f4e16a6198d419fed8c4da331624, type: 3}

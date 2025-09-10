@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 21_Spinash
   m_EditorClassIdentifier: 
-  CardName: Wolf
-  CardFrontFace: {fileID: 21300000, guid: 7c349ed37fd995442bacbb5112829b07, type: 3}
+  CardName: Spinash
+  CardFrontFace: {fileID: 21300000, guid: 127cdda6909427849b9f28419253e1e7, type: 3}

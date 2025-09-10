@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 12_GreenBeans
   m_EditorClassIdentifier: 
-  CardName: Fox
-  CardFrontFace: {fileID: 21300000, guid: 865591064dbf52d4bbff814c02182635, type: 3}
+  CardName: GreenBeans
+  CardFrontFace: {fileID: 21300000, guid: f4f7d24c5c5764e4baa50140caafd15d, type: 3}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 16_Potato
   m_EditorClassIdentifier: 
-  CardName: Duck
-  CardFrontFace: {fileID: 21300000, guid: 0fa970d5c9a182f4aac36fe0084b0d0e, type: 3}
+  CardName: Potato
+  CardFrontFace: {fileID: 21300000, guid: 8dbb28636c029014c9764a7a2c3ed70b, type: 3}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 20_Scallion
   m_EditorClassIdentifier: 
-  CardName: Raccoon
-  CardFrontFace: {fileID: 21300000, guid: b8c700d8b4e08a041be41ad508f5ece0, type: 3}
+  CardName: Scallion
+  CardFrontFace: {fileID: 21300000, guid: bd081a5811bb4c84f8eaa5ee2d4b694a, type: 3}

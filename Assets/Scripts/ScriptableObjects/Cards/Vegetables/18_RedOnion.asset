@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 18_RedOnion
   m_EditorClassIdentifier: 
-  CardName: Fish
-  CardFrontFace: {fileID: 21300000, guid: 89d42fe86b7c4b74694515b479b1ed59, type: 3}
+  CardName: RedOnion
+  CardFrontFace: {fileID: 21300000, guid: cdce9e8183384594abfb0149cd45fec9, type: 3}

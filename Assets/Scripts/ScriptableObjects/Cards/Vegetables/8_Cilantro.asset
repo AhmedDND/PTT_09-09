@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 8_Cilantro
   m_EditorClassIdentifier: 
-  CardName: Turtle
-  CardFrontFace: {fileID: 21300000, guid: d637b5eff22c28040ba7123d8afcb292, type: 3}
+  CardName: Cilantro
+  CardFrontFace: {fileID: 21300000, guid: aac00735108c72747806ef2cc1ad1dfd, type: 3}

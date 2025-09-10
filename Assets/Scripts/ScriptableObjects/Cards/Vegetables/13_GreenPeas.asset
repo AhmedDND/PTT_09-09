@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 13_GreenPeas
   m_EditorClassIdentifier: 
-  CardName: Camel
-  CardFrontFace: {fileID: 21300000, guid: cfe41cd10489095459630f86de452160, type: 3}
+  CardName: GreenPeas
+  CardFrontFace: {fileID: 21300000, guid: 346bb25a773853b4682799c3b998a11f, type: 3}

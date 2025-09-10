@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 10_Cucumber
   m_EditorClassIdentifier: 
-  CardName: Otter
-  CardFrontFace: {fileID: 21300000, guid: 85461d013de2a76438556858966728b0, type: 3}
+  CardName: Cucumber
+  CardFrontFace: {fileID: 21300000, guid: c349992e04ff5aa44ba078a199849af0, type: 3}

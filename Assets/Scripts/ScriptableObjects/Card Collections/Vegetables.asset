@@ -12,4 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c49ad9f39d3c1342973414b1e441fb0, type: 3}
   m_Name: Vegetables
   m_EditorClassIdentifier: 
-  cards: []
+  cards:
+  - {fileID: 11400000, guid: a00cafc04192b1845984d8457af88bac, type: 2}
+  - {fileID: 11400000, guid: c1ec095de4d0c3241b8f729f05b4355b, type: 2}
+  - {fileID: 11400000, guid: bf618dc2bc01f1f4d90796ff2f007a83, type: 2}
+  - {fileID: 11400000, guid: e9e05a2564546ff4baec850e2413a96a, type: 2}
+  - {fileID: 11400000, guid: 554c06d8e8a008048b7e7b0dbbf39436, type: 2}
+  - {fileID: 11400000, guid: 976780b5b3537464e86381050cab9af0, type: 2}
+  - {fileID: 11400000, guid: 73844566e437fd34a85c4b6b45ced7a8, type: 2}
+  - {fileID: 11400000, guid: 89aa1bae5a5b2e34bab33f01d4fe7e68, type: 2}
+  - {fileID: 11400000, guid: 537e968d94823ab48a94f073062948c4, type: 2}
+  - {fileID: 11400000, guid: b8ac558d9553b1f4da569fc77c25a104, type: 2}
+  - {fileID: 11400000, guid: ed68cf1be83850a4d826957545764569, type: 2}
+  - {fileID: 11400000, guid: 03d96013d55ccbe4c85cf0f483ef9d60, type: 2}
+  - {fileID: 11400000, guid: f2c78c0b3314cda4e8759ce22be2d65c, type: 2}
+  - {fileID: 11400000, guid: 0d732aea7036b504880f8fdaf7035d87, type: 2}
+  - {fileID: 11400000, guid: 11e4ab1cb4a938349a2eb0d4568b74f6, type: 2}
+  - {fileID: 11400000, guid: e7dc79073dfd83e4180a925dcb2672ba, type: 2}
+  - {fileID: 11400000, guid: 13d8c92c62b3cd64aac502422da668bf, type: 2}
+  - {fileID: 11400000, guid: 93f0b9354d50f77489e4e3560773ee7a, type: 2}
+  - {fileID: 11400000, guid: 5112706033d0d8f4d9acd281fc8e8591, type: 2}
+  - {fileID: 11400000, guid: 6643042a05ede9d4dbc461f3e439a789, type: 2}
+  - {fileID: 11400000, guid: 9cf7c735762f99140916591b5e3b0588, type: 2}
+  - {fileID: 11400000, guid: 5296d2378645fa24b9c344680230116b, type: 2}
+  - {fileID: 11400000, guid: 517000d1d63ae4749a6167772d5c9d7d, type: 2}
+  - {fileID: 11400000, guid: 3ee1d461277345f42a921f6e368b48b6, type: 2}

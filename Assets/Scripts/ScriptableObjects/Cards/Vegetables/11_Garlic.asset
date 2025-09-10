@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 11_Garlic
   m_EditorClassIdentifier: 
-  CardName: Crocodile
-  CardFrontFace: {fileID: 21300000, guid: 61a96af28db7a0844928eedb26343b02, type: 3}
+  CardName: Garlic
+  CardFrontFace: {fileID: 21300000, guid: 79538859f0e6d5246a01ae5712bb4248, type: 3}

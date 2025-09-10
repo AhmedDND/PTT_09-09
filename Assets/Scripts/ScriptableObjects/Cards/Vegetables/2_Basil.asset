@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 2_Basil
   m_EditorClassIdentifier: 
-  CardName: Dog
-  CardFrontFace: {fileID: 21300000, guid: d7897e9b5595a714d87a2dd4951b85fd, type: 3}
+  CardName: Basil
+  CardFrontFace: {fileID: 21300000, guid: 5a9db539a66a77f45af1ded185eee97e, type: 3}

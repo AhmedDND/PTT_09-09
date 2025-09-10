@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 23_Tomato
   m_EditorClassIdentifier: 
-  CardName: Bear
-  CardFrontFace: {fileID: 21300000, guid: dfdbfea14394f6f40b1bef44e0f98a0a, type: 3}
+  CardName: Tomato
+  CardFrontFace: {fileID: 21300000, guid: 85695952ae150c34496ae7b6f5332fe2, type: 3}

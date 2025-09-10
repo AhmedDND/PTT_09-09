@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 24_Zucchini
   m_EditorClassIdentifier: 
-  CardName: Deer
-  CardFrontFace: {fileID: 21300000, guid: fef51da532139cb4cbb97451790645b7, type: 3}
+  CardName: Zucchini
+  CardFrontFace: {fileID: 21300000, guid: 47d05b72c699d884ab77d3a7fb908bf7, type: 3}

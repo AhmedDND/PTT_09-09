@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed633d2789d640a26f5b3e691ae7e, type: 3}
   m_Name: 3_Beetroot
   m_EditorClassIdentifier: 
-  CardName: Badger
-  CardFrontFace: {fileID: 21300000, guid: bd57c953dae9a27498f8799a7a7bcde5, type: 3}
+  CardName: Beetroot
+  CardFrontFace: {fileID: 21300000, guid: 4fb7c0c786c7efe4bbbe0d7c8db3e7cd, type: 3}
