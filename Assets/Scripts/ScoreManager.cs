@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
 
     public int TotalScore => _totalScore;
     public int TurnsTaken => _turnsTaken;
+    public int CurrentCombo => _currentCombo;
 
     private void Awake()
     {
@@ -117,6 +118,14 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.Save();
             return currentScore;
         }
+    }
+
+    public void SetScoreFromSaveFile(int totalScore, int turnsTaken, int currentCombo)
+    {
+        _totalScore = totalScore;
+        _turnsTaken = turnsTaken;
+        _currentCombo = currentCombo;
+        UpdateUI();
     }
 
     private void UpdateHighScoreUI()

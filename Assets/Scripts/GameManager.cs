@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public bool IsProcessing { get; private set; }
 
+    public List<CardController> Cards => _cards;
+
     private void Awake()
     {
         if (Instance == null)

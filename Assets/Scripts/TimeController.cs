@@ -48,6 +48,12 @@ public class TimeController : MonoBehaviour
         _roundInProgress = true;
     }
 
+    public void SetRoundTime(float time)
+    {
+        _roundTime = time;
+        _timeText.text = GetTimeString();
+    }
+
     public void PauseTimer()
     {
         _roundInProgress = false;

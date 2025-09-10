@@ -48,6 +48,11 @@ public class MainMenuManager : MonoBehaviour
         GameSettings.Instance.SetCategory(_vehiclesCollection);
     }
 
+    public void OnContinueButtonClicked()
+    {
+        SaveLoadSystem.Instance.LoadSavedRound();
+    }
+
     public void OnPlayButtonChosen()
     {
         GameManager.Instance.InitializeGame();

@@ -15,6 +15,7 @@ public class CardController : MonoBehaviour
 
     public CardSO CardData => _cardData;
     public bool IsMatched => _isMatched;
+    public bool IsFlipped => _isFlipped;
 
     public void Initialize(CardSO cardData, Sprite cardBack)
     {
@@ -54,6 +55,13 @@ public class CardController : MonoBehaviour
         _isMatched = false;
 
         StartCoroutine(RotateCard(_isFlipped, true));
+    }
+
+    public void ForceFlipWithoutAnimation()
+    {
+        _isFlipped = true;
+        _cardFrontFace.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        _cardBackFace.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
     }
 
     public IEnumerator RotateCard(bool flipped, bool isReset = false, float duration = 0.25f)

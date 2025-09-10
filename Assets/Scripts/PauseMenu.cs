@@ -47,6 +47,9 @@ public class PauseMenu : MonoBehaviour
 
     public void OnMenuButtonClicked()
     {
+        //Test
+        SaveLoadSystem.Instance.SaveCurrentRound();
+
         _mainMenu.SetActive(true);
         _playMenu.SetActive(false);
         _pauseMenu.SetActive(false);
