@@ -137,11 +137,15 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
 
+        ScoreManager.Instance.RegisterTurn();
+
         if (first.CardData.name == second.CardData.name)
         {
             first.MarkAsMatched();
             second.MarkAsMatched();
             _matchedPairs++;
+
+            ScoreManager.Instance.RegisterMatch(_timeController.RoundTime);
 
             if (_matchedPairs >= (GameSettings.Instance.Rows * GameSettings.Instance.Columns) / 2)
             {
@@ -153,6 +157,13 @@ public class GameManager : MonoBehaviour
                     _timeController.SetEndGameText();
                 }
 
+                ScoreManager.Instance.SaveHighScore(
+                GameSettings.Instance.GetCategory().name,
+                GameSettings.Instance.Rows,
+                GameSettings.Instance.Columns,
+                GameSettings.Instance.CurrentDifficulty
+                );
+
                 OnGameCompleted?.Invoke();
             }
         }
@@ -160,6 +171,8 @@ public class GameManager : MonoBehaviour
         {
             first.ResetCard();
             second.ResetCard();
+
+            ScoreManager.Instance.ResetCombo();
         }
     }
 
@@ -168,6 +181,17 @@ public class GameManager : MonoBehaviour
         _matchedPairs = 0;
         _firstSelectedCard = null;
         _secondSelectedCard = null;
+        ScoreManager.Instance.ResetScore();
+        ScoreManager.Instance.UpdateUI();
         InitializeGame();
+    }
+
+    public void QuitRound()
+    {
+        _matchedPairs = 0;
+        _firstSelectedCard = null;
+        _secondSelectedCard = null;
+        ScoreManager.Instance.ResetScore();
+        ScoreManager.Instance.UpdateUI();
     }
 }

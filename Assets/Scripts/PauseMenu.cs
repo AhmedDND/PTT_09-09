@@ -51,6 +51,7 @@ public class PauseMenu : MonoBehaviour
         _playMenu.SetActive(false);
         _pauseMenu.SetActive(false);
         _gameOverMenu.SetActive(false);
+        GameManager.Instance.QuitRound();
     }
 
     private void ShowGameOverMenu()
