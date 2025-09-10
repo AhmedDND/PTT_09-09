@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject _cardPrefab;
     [SerializeField] private GameObject _gameGrid;
+    [SerializeField] private TimeController _timeController;
 
     private List<CardController> _cards = new List<CardController>();
     private CardController _firstSelectedCard;
@@ -31,6 +32,8 @@ public class GameManager : MonoBehaviour
     public void InitializeGame()
     {
         CreateCardGrid();
+        if (_timeController != null)
+            _timeController.StartTimer();
     }
 
     public void SetGridSize(int rows, int columns)
@@ -139,6 +142,12 @@ public class GameManager : MonoBehaviour
             if (_matchedPairs >= (GameSettings.Instance.Rows * GameSettings.Instance.Columns) / 2)
             {
                 Debug.Log("Game Completed!");
+
+                if (_timeController != null)
+                {
+                    _timeController.PauseTimer();
+                    _timeController.SetEndGameText();
+                }
             }
         }
         else
