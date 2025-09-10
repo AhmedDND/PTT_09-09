@@ -6,6 +6,9 @@ public class GameSettings : MonoBehaviour
 
     public CardsCollectionSO SelectedCategory { get; private set; }
 
+    [Header("Default Category")]
+    public CardsCollectionSO DefaultCategory;
+
     public Difficulty CurrentDifficulty { get; private set; } = Difficulty.EASY;
 
     [Min(2)] public int Rows = 2;
@@ -26,6 +29,13 @@ public class GameSettings : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // Ensure we always start with a valid category
+        if (SelectedCategory == null && DefaultCategory != null)
+        {
+            SelectedCategory = DefaultCategory;
+            Debug.Log($"Default category set to: {DefaultCategory.name}");
+        }
     }
 
     public void SetCategory(CardsCollectionSO category)
@@ -36,7 +46,7 @@ public class GameSettings : MonoBehaviour
 
     public CardsCollectionSO GetCategory()
     {
-        return SelectedCategory;
+        return SelectedCategory != null ? SelectedCategory : DefaultCategory;
     }
 
     public void SetDifficulty(Difficulty difficulty)
